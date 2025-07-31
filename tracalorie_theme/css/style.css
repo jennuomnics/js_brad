@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*# sourceMappingURL=style.css.map */
+
+.over {
+    background-color: orange;
+}
