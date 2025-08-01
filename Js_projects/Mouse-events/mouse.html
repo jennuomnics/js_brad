@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events Demo (Using addEventListener)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .event-box {
+            width: 220px;
+            height: 100px;
+            background-color: #e0e0e0;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .event-box:hover {
+            background-color: #d0d0ff;
+        }
+        
+        #log {
+            margin-top: 30px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mouse Event Demo (with addEventListener)</h1>
+
+    <div class="box-container">
+        <div class="event-box" id="onclickBox">Click (onclick)</div>
+        <div class="event-box" id="contextMenuBox">Right Click (oncontextmenu)</div>
+        <div class="event-box" id="dblclickBox">Double Click (ondblclick)</div>
+        <div class="event-box" id="mousedownBox">Mouse Down</div>
+        <div class="event-box" id="mouseupBox">Mouse Up</div>
+        <div class="event-box" id="mouseenterBox">Mouse Enter</div>
+        <div class="event-box" id="mouseleaveBox">Mouse Leave</div>
+        <div class="event-box" id="mousemoveBox">Mouse Move</div>
+        <div class="event-box" id="mouseoutBox">Mouse Out</div>
+        <div class="event-box" id="mouseoverBox">Mouse Over</div>
+    </div>
+
+    <div id="log"><strong>Event Log:</strong></div>
+
+    <script>
+        const log = document.getElementById('log');
+
+        function addLog(message) {
+            const time = new Date().toLocaleTimeString();
+            log.innerHTML += `<br>[${time}] ${message}`;
+            log.scrollTop = log.scrollHeight; // auto-scroll
+        }
+
+        // Use addEventListener for each event
+        document.getElementById('onclickBox').addEventListener('click', () => {
+            addLog('onclick: You clicked the box.');
+        });
+
+        document.getElementById('contextMenuBox').addEventListener('contextmenu', (e) => {
+            e.preventDefault(); // prevent right-click menu
+            addLog('oncontextmenu: You right-clicked.');
+        });
+
+        document.getElementById('dblclickBox').addEventListener('dblclick', () => {
+            addLog('ondblclick: You double-clicked.');
+        });
+
+        document.getElementById('mousedownBox').addEventListener('mousedown', () => {
+            addLog('onmousedown: Mouse button pressed.');
+        });
+
+        document.getElementById('mouseupBox').addEventListener('mouseup', () => {
+            addLog('onmouseup: Mouse button released.');
+        });
+
+        document.getElementById('mouseenterBox').addEventListener('mouseenter', () => {
+            addLog('onmouseenter: Mouse entered the box.');
+        });
+
+        document.getElementById('mouseleaveBox').addEventListener('mouseleave', () => {
+            addLog('onmouseleave: Mouse left the box.');
+        });
+
+        document.getElementById('mousemoveBox').addEventListener('mousemove', () => {
+            addLog('onmousemove: Mouse is moving over the box.');
+        });
+
+        document.getElementById('mouseoutBox').addEventListener('mouseout', () => {
+            addLog('onmouseout: Mouse moved out of the box.');
+        });
+
+        document.getElementById('mouseoverBox').addEventListener('mouseover', () => {
+            addLog('onmouseover: Mouse is over the box.');
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Choose What You Want?</h1>
+        </header>
+        <section class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Specification </th>
+                        <th>Lenova
+                            <a href="#lenovo" class="lenova-show"> <i class="fa-solid fa-eye" style="color: #1c95f2;"></i> </a>
+                        </th>
+                        <th>Hp
+                            <a href="#hp" class="hp-show"> <i class="fa-solid fa-eye" style="color: #1c95f2;"></i> </a>
+                        </th>
+                        <th>Dell
+                            <a href="#dell" class="dell-show"><i class="fa-solid fa-eye" style="color: #1c95f2;"></i> </a></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+            </table>
+        </section>
+        <div class="compare ">
+            <select class="laptop1">
+                <option>Choose 1st Laptop</option>
+                <option value="lenova">Lenova</option>
+                <option value="hp">Hp</option>
+                <option value="dell">Dell</option>
+            </select>
+            <select class="laptop2">
+                <option>Choose 2st Laptop</option>
+
+            </select>
+            <button type="button" class="compare-button">Comapare</button>
+        </div>
+
+        <div class="best-one active">
+            <div class="left-side">
+                <img src="./Images/dell.jpg" alt="dell" />
+            </div>
+            <div class="right-side">
+
+            </div>
+        </div>
+
+        <div id="lenova" class="laptop-container active">
+            <div class="left-side">
+                <img src="./Images/lenova.png" alt="lenova" />
+            </div>
+            <div class="right-side">
+                <h2>Lenova Laptop</h2>
+            </div>
+        </div>
+        <div id="hp" class="laptop-container active">
+            <div class="left-side">
+                <img src="./Images/hp.jpg" alt="hp" />
+            </div>
+            <div class="right-side">
+                <h2>Hp Laptop</h2>
+            </div>
+        </div>
+        <div id="dell" class="laptop-container active">
+            <div class="left-side">
+                <img src="./Images/dell.jpg" alt="lenova" />
+            </div>
+            <div class="right-side">
+                <h2>dell Laptop</h2>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

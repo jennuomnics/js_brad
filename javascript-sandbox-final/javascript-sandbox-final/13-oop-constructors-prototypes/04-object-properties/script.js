@@ -1,10 +1,10 @@
 function Rectangle(name, width, height) {
-  this.name = name;
-  this.width = width;
-  this.height = height;
-  this.area = function () {
-    return this.width * this.height;
-  };
+    this.name = name;
+    this.width = width;
+    this.height = height;
+    this.area = function() {
+        return this.width * this.height;
+    };
 }
 
 const rect1 = new Rectangle('Rectangle 1', 20, 20);
@@ -35,7 +35,12 @@ console.log(Object.values(rect2));
 console.log(Object.entries(rect1));
 
 for (let [key, value] of Object.entries(rect1)) {
-  if (typeof value !== 'function') {
-    console.log(`${key} - ${value}`);
-  }
+    if (typeof value !== 'function') {
+        console.log(`${key} - ${value}`);
+    }
 }
+
+const m = { name: 'suryateja', age: 23 }
+console.log(Object.keys(m))
+console.log(Object.values(m))
+console.log(Object.entries(m))

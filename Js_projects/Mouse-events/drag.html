@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop Events Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f5faff;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .draggable {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            border: 2px solid #333;
+            border-radius: 8px;
+            cursor: grab;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .dropzone {
+            width: 150px;
+            height: 150px;
+            background-color: lightgray;
+            border: 2px dashed #333;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .dropzone.highlight {
+            background-color: lightgreen;
+        }
+        
+        #log {
+            margin-top: 30px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Drag and Drop Demo (Beginner)</h2>
+
+    <div class="container">
+        <div class="draggable" id="dragItem" draggable="true">Drag Me</div>
+        <div class="dropzone" id="dropZone">Drop Here</div>
+    </div>
+
+    <div id="log"><strong>Event Log:</strong></div>
+
+    <script>
+        const dragItem = document.getElementById('dragItem');
+        const dropZone = document.getElementById('dropZone');
+        const log = document.getElementById('log');
+
+        function addLog(message) {
+            const time = new Date().toLocaleTimeString();
+            log.innerHTML += `<br>[${time}] ${message}`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // ' Drag Start
+        dragItem.addEventListener('dragstart', () => {
+            addLog('dragstart: Dragging started.');
+            dragItem.style.opacity = "0.5";
+        });
+
+        // ' While Dragging
+        dragItem.addEventListener('drag', () => {
+            addLog('drag: Dragging...');
+        });
+
+        // ' Drag End
+        dragItem.addEventListener('dragend', () => {
+            addLog('dragend: Dragging ended.');
+            dragItem.style.opacity = "1";
+        });
+
+        // ' Drag Enter
+        dropZone.addEventListener('dragenter', (e) => {
+            e.preventDefault();
+            addLog('dragenter: Dragged item entered drop zone.');
+            dropZone.classList.add('highlight');
+        });
+
+        // ' Drag Over (must prevent default to allow drop)
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            addLog('dragover: Dragged item is over drop zone.');
+        });
+
+        // ' Drag Leave
+        dropZone.addEventListener('dragleave', () => {
+            addLog('dragleave: Dragged item left drop zone.');
+            dropZone.classList.remove('highlight');
+        });
+
+        // ' Drop
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            addLog('drop: Item dropped into drop zone.');
+            dropZone.classList.remove('highlight');
+            dropZone.innerHTML = 'Dropped!';
+        });
+    </script>
+
+</body>
+
+</html>

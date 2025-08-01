@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    line-height: 1.8;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #0f2027;
+    scroll-behavior: smooth;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+.table-wrapper {
+    margin: 2rem;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    border: none;
+    margin-left: 2%;
+}
+
+th,
+td {
+    width: 20%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+tbody th,
+td {
+    padding: 1rem;
+}
+
+header {
+    align-self: center;
+}
+
+.compare {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-self: center;
+}
+
+select {
+    display: block;
+    width: 20rem;
+    background-color: #f1f1f1;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.compare-button {
+    cursor: pointer;
+    width: 100px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.compare-button:hover {
+    background-color: #f1f1f1;
+}
+
+.best-one {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.left-side {
+    width: 40%;
+}
+
+.right-side {
+    width: 60%;
+}
+
+img {
+    width: 100%;
+}
+
+.align {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 20px;
+    background-color: green;
+    text-align: center;
+    color: #fff;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.laptop-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    gap: 2rem;
+}
+
+.active {
+    display: none;
+}

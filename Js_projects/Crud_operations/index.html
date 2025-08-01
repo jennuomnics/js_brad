@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud without Apis</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="table-wrapper">
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>userId</th>
+                        <th>title</th>
+                        <th>completed Status</th>
+                        <th>Actions</th>
+                </thead>
+
+                </tr>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <form class="form-container">
+            <div class="form-group">
+                <label for="userId">User ID</label>
+                <input type="number" name="userId" id="userId" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required/>
+            </div>
+
+            <div class="form-group">
+                <label>Status</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="status" value="true" required/> True</label>
+                    <label><input type="radio" name="status" value="false" required /> False</label>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

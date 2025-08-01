@@ -1,4 +1,4 @@
-const set = new Set([1, 2, 2, 3, 3, 4]);
+const set = new Set();
 
 // Add a new value to the set
 set.add(5);
@@ -28,7 +28,7 @@ console.log(set.values());
 
 // Iterate through the set using a loop
 for (let item of set) {
-  console.log(item);
+    console.log(item);
 }
 
 // use iterator

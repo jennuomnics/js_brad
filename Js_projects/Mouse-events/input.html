@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Input Event Listeners Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5ff;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        input,
+        textarea {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+        
+        input:focus,
+        textarea:focus {
+            border-color: royalblue;
+        }
+        
+        #log {
+            margin-top: 30px;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ccc;
+            max-height: 250px;
+            overflow-y: auto;
+            font-family: monospace;
+            text-align: left;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Try typing below:</h2>
+
+    <input type="text" id="nameInput" placeholder="Type your name here" />
+    <br>
+    <textarea id="messageBox" placeholder="Type a message..."></textarea>
+
+    <div id="log"><strong>Event Log:</strong></div>
+
+    <script>
+        const nameInput = document.getElementById("nameInput");
+        const messageBox = document.getElementById("messageBox");
+        const log = document.getElementById("log");
+
+        function addLog(eventType, value) {
+            const time = new Date().toLocaleTimeString();
+            log.innerHTML += `<br>[${time}] ${eventType} → "${value}"`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // ✅ INPUT EVENTS
+        nameInput.addEventListener("input", (e) => {
+            addLog("input", e.target.value);
+        });
+
+        nameInput.addEventListener("change", (e) => {
+            addLog("change", e.target.value);
+        });
+
+        nameInput.addEventListener("focus", () => {
+            addLog("focus", "Name input focused");
+        });
+
+        nameInput.addEventListener("blur", () => {
+            addLog("blur", "Name input blurred");
+        });
+
+        nameInput.addEventListener("keydown", (e) => {
+            addLog("keydown", `Key pressed: ${e.key}`);
+        });
+
+        nameInput.addEventListener("keyup", (e) => {
+            addLog("keyup", `Key released: ${e.key}`);
+        });
+
+        // Optional: Track textarea too
+        messageBox.addEventListener("input", (e) => {
+            addLog("textarea input", e.target.value);
+        });
+
+        messageBox.addEventListener("blur", (e) => {
+            addLog("blur", e.target.value)
+        })
+    </script>
+
+</body>
+
+</html>
