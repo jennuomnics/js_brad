@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Price Camparision Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="logo" href="./Images/edge_732092.png">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header Section -->
+        <header>
+            <div>
+                <img src="./Images/edge_732092.png" style="height: 50px; width: 50px;" alt="logo" />
+            </div>
+
+            <div class="nav-items">
+
+                <a href="#hero-section" target="_top">Home</a>
+                <a href="#comparision-Results">Compare Laptops</a>
+                <!-- <a href="#hp">Hp Info</a>
+                <a href="#dell">Dell Info</a> -->
+
+                <a href="#contact">Contact Info </a>
+
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Hero Section -->
+            <section id="hero-section" class="hero-section">
+                <h1>Discover Your Perfect Laptop</h1>
+                <p>Compare. Explore. Choose the best device that fits your needs.
+                </p>
+                <a href="#hp" class="hero-btn">Browse Laptops</a>
+            </section>
+
+
+            <!-- Add Laptop And SearchFunctionality -->
+            <div class="Add-specfication">
+
+                <div class="style-SearchFeild">
+                    <input type="text" id="searchLaptop" placeholder="Search with Laptop" />
+                    <i class="fa-solid fa-xmark fa-lg active" id="searchRemove"></i>
+                </div>
+
+                <button class="addLaptop">
+                        Add Laptop <i class="fa-solid fa-plus fa-lg"></i>
+                    </button>
+
+            </div>
+
+            <!-- Modal -->
+            <div id="addLaptop" class="modal active">
+                <div class="modal-content1 brand-style">
+
+                    <span class="close-btn" id="closeModal">&times;</span>
+
+                    <h2 class="modal-title form-gap">Add New Laptop</h2>
+
+                    <form id="addLaptopForm">
+                        <input type="text" name="brand" class="form-gap" placeholder="Brand" required />
+                        <input type="text" name="model" class="form-gap" placeholder="Model" required />
+                        <input type="number" name="price" class="form-gap" placeholder="Price" required />
+                        <input type="number" name="offerPrice" class="form-gap" placeholder="Offer Price" required />
+                        <input type="text" name="image" class="form-gap" placeholder="Image URL" required />
+                        <input type="text" name="description" class="form-gap" placeholder="Description" required />
+                        <input type="text" name="url" class="form-gap" placeholder="Product URL" />
+                        <input type="number" name="overallRating" class="form-gap" placeholder="Overall Rating" min="1" max="5" />
+
+                        <!-- <div id="specInputGroup">
+                            <input type="text" id="specName" class="form-gap" placeholder="Specification Name" />
+                            <input type="text" id="specValue" class="form-gap" placeholder="Specification Value" />
+                            <input type="number" id="specRating" class="form-gap" placeholder="Rating (1–5)" min="1" max="5" />
+                            <button type="button" id="addSpecBtn" style="margin-bottom: 10px;">Add
+                                    Specification</button>
+                        </div>
+
+                        <div id="specDisplayContainer"></div> -->
+
+                        <p class="active" id="written">
+                            Note :Laptop Added Successfully if you want to Add Specification You can Add or close the Modal</p>
+
+                        <button type="submit" class="add-laptop-btn" id="disableAdd">Add
+                                Laptop</button>
+
+                        <button type="button" class="liketoAdd active">
+                            Add Specifications
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+
+            <!-- Adding Specification Modal -->
+
+            <div id="newSpecificationModal" class="modal active">
+                <div class="modal-content1 brand-style">
+
+                    <span class="close-btn" id="closeModal3">&times;</span>
+
+                    <h2 class="form-gap">Add Specification Laptop</h2>
+
+                    <form id="anewSpecificationModalForm">
+                        <div id="specInputGroup">
+                            <input type="text" id="specName" class="form-gap" placeholder="Specification Name" />
+                            <input type="text" id="specValue" class="form-gap" placeholder="Specification Value" />
+                            <input type="number" id="specRating" class="form-gap" placeholder="Rating (1–5)" min="1" max="5" />
+                            <button type="button" id="addSpecBtn" style="margin-bottom: 10px;">Add
+                                    Specification</button>
+                        </div>
+
+                        <div id="specDisplayContainer"></div>
+
+                        <button type="submit">
+                            submit
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+
+            <!-- Laptops Container To Display Laptops -->
+
+            <div id="laptopsContainer">
+
+            </div>
+
+
+
+            <!-- Compare laptops -->
+
+            <div class="compare" id="comparision-Results">
+                <select class="laptop1">
+                        <option value>Choose 1st Laptop</option>
+                    </select>
+                <select class="laptop2">
+                        <option value>Choose 2nd Laptop</option>
+                    </select>
+                <select class="laptop3">
+                        <option value>Choose 3rd Laptop</option>
+                    </select>
+                <button type="button" class="compare-button">Compare</button>
+            </div>
+
+            <!-- Table Section  Displaying Comparision Result -->
+
+            <section class="comparisionResults active">
+
+                <div class="Add-specfication">
+                    <button class="addSpecification">
+                            Add Specification <i
+                                class="fa-solid fa-plus fa-lg"></i>
+                    </button>
+
+                    <a href="#comparision-Results" id="viewResults">View Results</a>
+
+                </div>
+
+                <div class="add-from active">
+                    <form class="addForm">
+                        <div class="form-group">
+                            <label for="specificationName">Specification
+                                    Name</label>
+                            <input type="text" id="specificationName" placeholder="Enter Specification Name" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="modelSelector">Select Brand &
+                                    Model</label>
+                            <select id="modelSelector">
+                                    <option value>-- Select Laptop --</option>
+
+                                </select>
+                        </div>
+
+                        <div class="mini-form">
+                            <div class="form-group">
+                                <input type="text" id="modelSpecValue" placeholder="Enter Specification Value" />
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="modelRating" placeholder="Rating (1–5)" min="1" max="5" />
+                            </div>
+                            <div class="form-group">
+                                <button type="button" id="addModel">Add</button>
+                            </div>
+                        </div>
+
+                        <div id="modelsContainer"></div>
+
+                        <div class="form-group">
+                            <button type="submit">Submit
+                                    Specification</button>
+                        </div>
+                    </form>
+                </div>
+
+                <section class="table-wrap" id="home">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Specification</th>
+                                <th id="header1">Laptop 1</th>
+                                <th id="header2">Laptop 2</th>
+                                <th id="header3">Laptop 3</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+
+            </section>
+
+            <!-- Best Laptop -->
+
+            <div id="best-one" class="modal active">
+                <div class="modal-content">
+                    <span class="close-btn" id="closeModal1">&times;</span>
+                    <div class="left-side">
+                        <img src="./Images/dell.jpg" alt="hpimage" />
+                    </div>
+                    <div class="right-side">
+                        <h2>Dell Laptop</h2>
+                        <p>Some information about the best laptop...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thanks Modal for Contacting Us-->
+            <div id="thankyou" class="modal active">
+                <div class="thanks-contact">
+                    <img src="./Images/thankyou.png" alt="thankYou Image" />
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Section -->
+        <footer id="contact" class="contact-us">
+            <form class="styled-form conFom">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required />
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="remember" />
+                    <label for="remember">Remember Me</label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="contactButton">Submit</button>
+                </div>
+            </form>
+
+            <div class=" styled-form fit-image">
+
+                <img src="./Images/flat-design-illustration-customer-support_23-2148887720.avif" alt="contactus" />
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./comparision.js"></script>
+</body>
+
+</html>
